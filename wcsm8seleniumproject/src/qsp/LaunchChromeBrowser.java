@@ -1,30 +1,25 @@
 package qsp;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class LaunchChromeBrowser {
 
 	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");//to avoid IlleaglStatException
+
+		// to handle ConnectionFailedException
 		
-
-		//to avoid IllegalStatException.
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
-
-		// To avoid ConnectionFailedException
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 		
-		// to launch chrome Browser
-		ChromeDriver driver = new ChromeDriver(co);
-	
+		WebDriver driver=new ChromeDriver(co);// to launch chrome Browser
 		// to maximize browser
 		driver.manage().window().maximize();
-		
-		// to close the chrome Browser
-		Thread.sleep(2000); // stop the execution of script for 2 sec.
-		
-		driver.close();
+		Thread.sleep(2000);// provide the delay 
+		driver.close();// close the browser
 	}
 
 }
