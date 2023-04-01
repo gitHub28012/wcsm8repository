@@ -19,8 +19,10 @@ public class QuitMethod {
 		WebDriver driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
 		driver.get("http://omayo.blogspot.com/");
-
-		driver.findElement(By.xpath("//a[.='Open a popup window']")).click();
+   
+		//driver.findElement(By.linkText("Open a popup window")).click();
+		
+		driver.findElement(By.partialLinkText("Open ")).click();
 
 		Thread.sleep(2000);
 
