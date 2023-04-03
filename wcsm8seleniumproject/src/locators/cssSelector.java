@@ -23,7 +23,7 @@ public class cssSelector {
 		Thread.sleep(2000);
 		driver.findElement(By.name("password")).sendKeys("asdfgh");
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("button[class='_acan _acap _acas _aj1-']")).click();
+		driver.findElement(By.cssSelector("button[class*='p ']")).click();
 
 	}
 
