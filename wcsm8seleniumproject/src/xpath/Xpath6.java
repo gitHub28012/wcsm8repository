@@ -12,11 +12,11 @@ public class Xpath6 {
 	public static void main(String[] args) throws InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+//
+//		ChromeOptions co = new ChromeOptions();
+//		co.addArguments("--remote-allow-origins=*");
 
-		ChromeOptions co = new ChromeOptions();
-		co.addArguments("--remote-allow-origins=*");
-
-		WebDriver driver=new ChromeDriver(co);
+		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 
 		driver.get("https://www.flipkart.com/");
